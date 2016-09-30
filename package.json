@@ -1,0 +1,35 @@
+{
+  "name": "maybe-bundle",
+  "version": "1.0.0",
+  "description": "a watchify plugin, provides to re bundle only when files changed",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wordijp/maybe-bundle"
+  },
+  "keywords": [
+    "component",
+    "components",
+    "browserify",
+    "browserify-plugin",
+    "watchify",
+    "plugin",
+    "maybe-bundle"
+  ],
+  "author": {
+    "name": "wordijp",
+    "email": "wordijp@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "crypto": "0.0.3",
+    "through2": "^2.0.1"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "bugs": {
+    "url": "https://github.com/wordijp/maybe-bundle/issues"
+  },
+  "homepage": "https://github.com/wordijp/maybe-bundle"
+}
