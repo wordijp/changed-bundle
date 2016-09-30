@@ -33,7 +33,7 @@ function maybeBundle(browserify, options) {
 		});
 	});
 
-	if (!options.noreset) browserify.on('reset', reset);
+	browserify.on('reset', reset);
 	reset();
 
 	function reset() {
@@ -53,8 +53,9 @@ function maybeBundle(browserify, options) {
 				while (current_bundle._readableState.pipesCount > 0) current_bundle.unpipe();
 
 				var outfile = browserify.argv && (browserify.argv.o || browserify.argv.outfile);
-				console.error('*** skip write to ' + (outfile || 'bundle file') + ' ***');
-				
+				var label = options.label ? (options.label + ': ') : '';
+				console.error('*** ' + label + 'skip write to ' + (outfile || 'bundle file') + ' ***');
+
 				current_bundle.emit('end');
 			});
 		});

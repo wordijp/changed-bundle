@@ -1,6 +1,6 @@
 {
   "name": "maybe-bundle",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a watchify plugin, provides to re bundle only when files changed",
   "main": "index.js",
   "repository": {
