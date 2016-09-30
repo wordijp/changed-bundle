@@ -52,8 +52,10 @@ function maybeBundle(browserify, options) {
 				//             ...
 				while (current_bundle._readableState.pipesCount > 0) current_bundle.unpipe();
 
+				var outfile = browserify.argv && (browserify.argv.o || browserify.argv.outfile);
+				console.error('*** skip write to ' + (outfile || 'bundle file') + ' ***');
+				
 				current_bundle.emit('end');
-				console.error('*** skip write to bundle file ***');
 			});
 		});
 
