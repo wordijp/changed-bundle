@@ -33,7 +33,7 @@ function maybeBundle(browserify, options) {
 		});
 	});
 
-	if (!options.noreset) browserify.on('reset', reset);
+	browserify.on('reset', reset);
 	reset();
 
 	function reset() {
