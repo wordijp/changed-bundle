@@ -23,13 +23,15 @@ var b = browserify({
 	packageCache: {},
 	plugin: [watchify],
 })
-	.plugin('maybe-bundle');
+	.plugin('maybe-bundle', {
+		label: 'LABEL' // optional. distinction with other skip messages
+	});
 ```
 
 ## Command Line
 
 ```shell
-$ watchify entry.js -v -d -p [maybe-bundle] > bundle.js
+$ watchify entry.js -v -p [maybe-bundle --label LABEL] > bundle.js
 ```
 
 ### running demo
@@ -43,7 +45,7 @@ first time bundle is output bundle file.
 bundle from the second time, skip re bundle if no change in the files.
 
 ```shell
-*** skip write to bundle file ***
+*** LABEL: skip write to bundle file ***
 ```
 
 # license
