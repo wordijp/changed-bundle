@@ -1,14 +1,14 @@
-maybe-bundle
+changed-bundle
 ================
 
-[![NPM](https://nodei.co/npm/maybe-bundle.png)](https://nodei.co/npm/maybe-bundle/)
+[![NPM](https://nodei.co/npm/changed-bundle.png)](https://nodei.co/npm/changed-bundle/)
 
-Let `maybe-bundle` plugin for watchify, provides to re bundle only when files changed.
+Let `changed-bundle` plugin for watchify, provides to re bundle only when files changed.
 
 # install
 
 ```
-npm install maybe-bundle
+npm install changed-bundle
 ```
 
 # usage
@@ -23,7 +23,7 @@ var b = browserify({
 	packageCache: {},
 	plugin: [watchify],
 })
-	.plugin('maybe-bundle', {
+	.plugin('changed-bundle', {
 		label: 'LABEL' // optional. distinction with other skip messages
 	});
 ```
@@ -31,7 +31,7 @@ var b = browserify({
 ## Command Line
 
 ```shell
-$ watchify entry.js -v -p [maybe-bundle --label LABEL] > bundle.js
+$ watchify entry.js -v -p [changed-bundle --label LABEL] > bundle.js
 ```
 
 ### running demo
@@ -45,7 +45,7 @@ first time bundle is output bundle file.
 bundle from the second time, skip re bundle if no change in the files.
 
 ```shell
-*** LABEL: skip write to bundle file ***
+*** LABEL: skip write to bundle file (0.01 seconds) ***
 ```
 
 # license
