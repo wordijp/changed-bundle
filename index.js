@@ -37,6 +37,11 @@ function changedBundle(browserify, options) {
 	reset();
 
 	function reset() {
+		var time = null;
+		browserify.pipeline.get('record').on('end', function () {
+			time = Date.now();
+		});
+
 		var modified = false;
 
 		// create event, for canceling output bundle file
@@ -52,9 +57,11 @@ function changedBundle(browserify, options) {
 				//             ...
 				while (current_bundle._readableState.pipesCount > 0) current_bundle.unpipe();
 
-				var outfile = browserify.argv && (browserify.argv.o || browserify.argv.outfile);
+				var outfile = browserify.argv && (browserify.argv.o || browserify.argv.outfile) || 'bundle file';
+				var delta = Date.now() - time;
+				var seconds = ' (' + (delta / 1000).toFixed(2) + ' seconds)';
 				var label = options.label ? (options.label + ': ') : '';
-				console.error('*** ' + label + 'skip write to ' + (outfile || 'bundle file') + ' ***');
+				console.error('*** ' + label + 'skip write to ' + outfile + seconds + ' ***');
 
 				current_bundle.emit('end');
 			});
