@@ -1,6 +1,6 @@
 {
   "name": "changed-bundle",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "a watchify plugin, provides to re bundle only when files changed",
   "main": "index.js",
   "repository": {
