@@ -1,11 +1,11 @@
 {
-  "name": "maybe-bundle",
+  "name": "changed-bundle",
   "version": "1.0.2",
   "description": "a watchify plugin, provides to re bundle only when files changed",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wordijp/maybe-bundle"
+    "url": "https://github.com/wordijp/changed-bundle"
   },
   "keywords": [
     "component",
@@ -14,7 +14,7 @@
     "browserify-plugin",
     "watchify",
     "plugin",
-    "maybe-bundle"
+    "changed-bundle"
   ],
   "author": {
     "name": "wordijp",
@@ -29,7 +29,7 @@
     "test": "test"
   },
   "bugs": {
-    "url": "https://github.com/wordijp/maybe-bundle/issues"
+    "url": "https://github.com/wordijp/changed-bundle/issues"
   },
-  "homepage": "https://github.com/wordijp/maybe-bundle"
+  "homepage": "https://github.com/wordijp/changed-bundle"
 }

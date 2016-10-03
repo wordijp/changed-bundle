@@ -5,7 +5,7 @@ var crypto = require('crypto');
 
 // watchify plugin
 
-module.exports = maybeBundle;
+module.exports = changedBundle;
 
 function sha1(buf) {
 	return crypto.createHash('sha1').update(buf).digest('hex');
@@ -13,7 +13,7 @@ function sha1(buf) {
 
 //////////////////////////////////////////////////////////////////////////////
 
-function maybeBundle(browserify, options) {
+function changedBundle(browserify, options) {
 	var current_bundle;
 	browserify.on('bundle', function(bundle) {
 		current_bundle = bundle;
