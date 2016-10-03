@@ -2,6 +2,7 @@
 
 var through = require('through2');
 var crypto = require('crypto');
+var resolve = require('resolve');
 
 // watchify plugin
 
@@ -74,6 +75,7 @@ function changedBundle(browserify, options) {
 		var check_modified_stream = through.obj(
 			function transform(row, enc, next) {
 				var file = row.expose ? browserify._expose[row.id] : row.file;
+				file = resolve.sync(file); // maybe resolve of main path in package.json
 				if (update_files[file] || !file_hash_cache[file]) {
 					// check: 'add' or 'change source'
 					var hash = sha1(row.source);
