@@ -6,6 +6,7 @@ var crypto = require('crypto');
 // watchify plugin
 
 module.exports = changedBundle;
+module.exports.util = require('./lib/util');
 
 function sha1(buf) {
 	return crypto.createHash('sha1').update(buf).digest('hex');
